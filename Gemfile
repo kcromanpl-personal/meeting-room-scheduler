@@ -55,3 +55,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Devise Gem for User authentication
   gem 'devise'
+# Slim for HTML template
+  gem 'slim'
