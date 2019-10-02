@@ -1,0 +1,5 @@
+= render 'layouts/flasherror'
+.container 
+  h3 Edit Meeting Room
+  = form_for @meeting_room, url: meeting_room_path(@meeting_room.id), method: :put do |f|
+    = render(:partial => 'form', :locals => {:form => f})

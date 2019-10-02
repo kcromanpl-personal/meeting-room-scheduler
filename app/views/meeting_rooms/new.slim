@@ -1,0 +1,5 @@
+= render 'layouts/flasherror'
+.container 
+  h3 Create New Project
+  = form_for @meeting_room do |f|
+    =render(:partial => 'form', :locals => {:form => f})

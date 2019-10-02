@@ -1,0 +1,35 @@
+<header>
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <span class="navbar-brand mb-0 h1 animated infinite pulse delay-2s"> Meeting Room Scheduler</span>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <% if current_user %>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+
+          <li class="nav-item active">
+            <%= link_to 'Meeting Rooms', meeting_rooms_path, class: 'nav-link'%>
+          </li>
+
+          <li class="nav-item dropdown mr-auto">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <%= current_user.email %>
+            </a>
+
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <% if current_user && current_user.admin%>
+                <%= link_to 'Invitation',new_user_invitation_path, class: 'dropdown-item' %>
+              <% end %>
+              <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: "dropdown-item" %>
+            </div>
+          </li>
+      </div>
+      <% end %>
+    </nav>
+  </div>
+</header>

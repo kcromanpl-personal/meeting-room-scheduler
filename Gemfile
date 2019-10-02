@@ -53,5 +53,13 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# Debugging - pry rails
+  gem 'pry-rails', :group => :development
+# Gem file Dotenv-rails for environment variables
+  gem 'dotenv-rails', groups: [:development, :test]
+# Devise_Invitable Gem for inviting users via email
+  gem 'devise_invitable', '~> 2.0.0'
 # Devise Gem for User authentication
   gem 'devise'
+# Slim for HTML template
+  gem 'slim'

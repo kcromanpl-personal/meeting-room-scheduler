@@ -1,0 +1,33 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  margin: 5px!important;
+}
+.container h2, .container h3{
+  text-align: center!important;
+}
+.navbar a{
+  margin: 0px 50px;
+}
+.dropdown-menu{
+  margin-top: 8px!important;
+}
+.dropdown-item{
+  margin: 0!important;
+}
+.margin-left{
+  margin-left: 15%!important;
+}
+.dropdown-margin-left{
+  margin-left: 25%!important;
+}
+span::first-letter {
+ font-size: 150%;
+ font-weight: 800;
+ color: rgb(226, 43, 43);
+ font-family: cursive;
+}
+footer{
+ margin-top : 20px;
+}
