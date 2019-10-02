@@ -1,1 +1,2 @@
-= render "schedules/bookform"
+= form_for @schedule do |f|
+  =render(:partial => 'bookform', :locals => {:form => f})

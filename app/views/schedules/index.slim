@@ -1,0 +1,23 @@
+table class = "table table-dark table-hover"
+  tr
+    th Name
+    th Agenda
+    th Start Date
+    th End Date
+    th Start Time
+    th End Time
+    th Users
+
+  -@schedules.each do |schedule|
+    tr
+      td = schedule.name
+      td = schedule.agenda
+      td = schedule.start_date
+      td = schedule.end_date
+      td = schedule.start_time
+      td = schedule.end_time
+      td = schedule.add_users
+
+      / Only for creating users
+      td = link_to 'Edit', edit_schedule_path(schedule)
+      td = link_to 'Delete', schedule_path(schedule), method: :delete, data: {confirm: 'Are You sure ?'}

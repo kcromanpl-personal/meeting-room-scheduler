@@ -1,44 +1,41 @@
-.container
-  = form_for @schedule do |form|
-    .form_item
-      = form.label :name
-      br/
-      = form.text_field :name, class:'form-control col-auto'
+.form_item
+  = form.label :name
+  br/
+  = form.text_field :name, class:'form-control col-auto'
 
-    .form_item
-      = form.label :agenda
-      br/
-      = form.text_area :agenda,class:'form-control col-auto'
+.form_item
+  = form.label :agenda
+  br/
+  = form.text_area :agenda,class:'form-control col-auto'
 
-    .form_item
-      = form.label :start_date
-      br/
-      / form selection for start date
-      = form.select :start_date,['2019-09-10','2019-09-11'],{},class:'form-control col-2'
+.form_item
+  = form.label :start_date
+  br/
+  / form selection for start date
+  = form.select :start_date,['2019-09-10','2019-09-11'],{},class:'form-control col-2'
 
-    .form_item
-      = form.label :end_date
-      br/
-      / form selection for start date
-      = form.select :end_date,['2019-09-11','2019-09-12'],{},class:'form-control col-2'
+.form_item
+  = form.label :end_date
+  br/
+  / form selection for start date
+  = form.select :end_date,['2019-09-11','2019-09-12'],{},class:'form-control col-2'
 
-    .form_item
-      = form.label :start_time
-      br/
-      / form selection for start date
-      = form.select :start_time,['10:00','11:00'],{},class:'form-control col-2'
+.form_item
+  = form.label :start_time
+  br/
+  / form selection for start date
+  = form.select :start_time,['10:00','11:00'],{},class:'form-control col-2'
 
-    .form_item
-      = form.label :end_time
-      br/
-      / form selection for start date
-      = form.select :end_time,['11:00','12:00'],{},class:'form-control col-2'
+.form_item
+  = form.label :end_time
+  br/
+  / form selection for start date
+  = form.select :end_time,['11:00','12:00'],{},class:'form-control col-2'
 
-    .form-item
-      = form.label :add_users
-      / select helper takes two options hashes, one for select, and the second for html options
-      = form.select :add_users, options_for_select(@users_list),{}, class:'form-control col-3'
+.form-item
+  = form.label :add_users
+  / select helper takes two options hashes, one for select, and the second for html options
+  = form.select :add_users, options_for_select(@users_list),{}, class:'form-control col-3'
 
-    .form_item
-      = form.submit class: 'btn btn-dark col-8 margin-left'
-  
+.form_item
+  = form.submit class: 'btn btn-dark col-8 margin-left'
