@@ -7,7 +7,7 @@
       / or current_user.create_user?
       -if current_user.admin?
         = link_to 'Edit',  edit_meeting_room_path(room)
-        = link_to 'Book', schedules_path
+        = link_to 'Book', new_schedule_path
         = link_to 'Delete', meeting_room_path(room), method: :delete, data: {confirm: 'Are you sure?'}
 
   -if current_user.admin?

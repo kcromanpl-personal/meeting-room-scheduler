@@ -1,0 +1,27 @@
+= form_for @schedule do |form|
+  p
+    = form.label :name
+    br/
+    = form.text_field :name, class:'form-control col-auto'
+  p
+    = form.label :agenda
+    br/
+    = form.text_area :agenda,class:'form-control col-auto'
+  p
+    = form.label :date
+    br/
+    / form selection for start date
+    = form.text_area :date,class:'form-control col-auto'
+  p
+    = form.label :start_time
+    / form selection for end date
+    = form.select :start_time, ['Pending', 'Fixed'], {},class:'form-control col-2'
+  p
+    = form.label :add_user
+    / select helper takes two options hashes, one for select, and the second for html options
+    = form.select :assigned, options_for_select(@users_list),{}, class:'form-control col-3'
+  / p
+  /   = form.label :status
+  /   = form.select :status, ['Pending', 'Fixed'], {},class:'form-control col-2'
+  p
+    = form.submit class: 'btn btn-dark col-8 margin-left'
