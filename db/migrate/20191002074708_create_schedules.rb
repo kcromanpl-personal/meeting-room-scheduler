@@ -7,6 +7,7 @@ class CreateSchedules < ActiveRecord::Migration[6.0]
       t.datetime :end_date
       t.datetime :start_time
       t.datetime :end_time
+      t.string :add_users
 
 
       t.timestamps

@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2019_10_02_074708) do
   create_table "meeting_rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
     t.string "description"
+    t.boolean "status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -26,6 +27,7 @@ ActiveRecord::Schema.define(version: 2019_10_02_074708) do
     t.datetime "end_date"
     t.datetime "start_time"
     t.datetime "end_time"
+    t.string "add_users"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
