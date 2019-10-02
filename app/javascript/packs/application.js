@@ -15,6 +15,8 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+import 'bootstrap'
+// import './src/application.scss'
 //= require jquery
 //= require popper.js/dist/umd/popper
 //= require bootstrap/dist/js/bootstrap
