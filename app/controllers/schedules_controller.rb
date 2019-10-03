@@ -1,4 +1,5 @@
 class SchedulesController < ApplicationController
+  before_action :set_schedule, only: [:show, :edit, :update, :destroy ]
   def index
     @schedules = Schedule.all
   end
@@ -10,6 +11,7 @@ class SchedulesController < ApplicationController
 
   def create
     @schedule = Schedule.new(schedule_params)
+    @schedule.user_id = current_user.id 
 
     if @schedule.save
       redirect_to schedules_path
@@ -19,13 +21,10 @@ class SchedulesController < ApplicationController
   end
 
   def edit
-    @schedule = Schedule.find(params[:id])
     @users_list = User.pluck(:email)
   end
 
   def update
-    @schedule = Schedule.find(params[:id])
-
     if @schedule.update(schedule_params)
       redirect_to schedules_path
     else
@@ -35,7 +34,6 @@ class SchedulesController < ApplicationController
 
   # Destroy the project
   def destroy
-    @schedule= Schedule.find(params[:id])
 
     if @schedule.destroy
       redirect_to schedules_path
@@ -46,8 +44,13 @@ class SchedulesController < ApplicationController
 
 
   private
+  #set schedule
+    def set_schedule
+      @schedule = Schedule.find(params[:id])
+    end
+    #set params
     def schedule_params
-      params.require(:schedule).permit(:name, :agenda, :start_date, :end_date, :start_time, :end_time, :add_users)
+      params.require(:schedule).permit(:name, :agenda, :start_date, :end_date, :start_time, :end_time, :add_users, :user_id)
     end
 
 end
