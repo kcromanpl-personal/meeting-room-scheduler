@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_03_031023) do
+ActiveRecord::Schema.define(version: 2019_10_03_043419) do
 
   create_table "meeting_rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.string "name"
@@ -33,6 +33,8 @@ ActiveRecord::Schema.define(version: 2019_10_03_031023) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
+    t.bigint "meeting_room_id", null: false
+    t.index ["meeting_room_id"], name: "index_schedules_on_meeting_room_id"
     t.index ["user_id"], name: "index_schedules_on_user_id"
   end
 
@@ -62,5 +64,6 @@ ActiveRecord::Schema.define(version: 2019_10_03_031023) do
   end
 
   add_foreign_key "meeting_rooms", "users"
+  add_foreign_key "schedules", "meeting_rooms"
   add_foreign_key "schedules", "users"
 end

@@ -1,5 +1,5 @@
 = render 'layouts/flasherror'
 .container 
-  h3 Edit Schedule
-  = form_for @schedule do |f|
+  h3 Create Schedule
+  = form_for ([@meeting_room, @schedule]) do |f|
     =render(:partial => 'bookform', :locals => {:form => f})
