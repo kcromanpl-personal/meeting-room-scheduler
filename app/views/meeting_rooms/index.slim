@@ -1,17 +1,16 @@
 .container
   / div for each meeting room
-  - @meeting_rooms.each do |room|
-    .col-md-5
+  -@meeting_rooms.each do |room|
+    .meeting_div
       = room.name
-      .meeting_action
-        / or current_user.create_user?
-        -if current_user.admin?
-          br/
-          = link_to 'Edit',  edit_meeting_room_path(room), class: "btn btn-outline-info margin-left"
-          = link_to 'Book', new_schedule_path, class: "btn btn-outline-info margin-left"
-          = link_to 'Delete', meeting_room_path(room), method: :delete, data: {confirm: 'Are you sure?'}, class: "btn btn-outline-info margin-left"
-
-  -if current_user.admin?
-    br/
-    br/
-    = link_to "New Meeting Room", new_meeting_room_path, class: "btn btn-info col-8 margin-left"
+    .meeting_action
+      / or current_user.create_user?
+      -if admin?
+        = link_to 'Edit',  edit_meeting_room_path(room)
+        = link_to 'Book', new_schedule_path
+        = link_to 'Delete', meeting_room_path(room), method: :delete, data: {confirm: 'Are you sure?'}
+      -else 
+        = link_to 'Book', new_schedule_path
+        
+  -if admin?
+    = link_to "New Meeting Room", new_meeting_room_path
