@@ -1,0 +1,26 @@
+.container
+
+	h3 Meeting Schedule Details
+	p
+	strong Name: 
+	= @schedule.name
+	p
+	strong Agenda: 
+	= @schedule.agenda
+	p
+	strong Start Date: 
+	= readable_date(@schedule.start_date)
+	p
+	strong End Date: 
+	= readable_date(@schedule.end_date)
+	p
+	strong Start Time: 
+	= readable_time(@schedule.start_time)
+	p
+	strong End Time: 
+	= readable_time(@schedule.end_time)
+	p
+	strong Attendies
+	= @schedule.add_users
+
+= link_to 'Meeting Room', meeting_rooms_path, class: 'btn btn-info col-8 margin-left'  
