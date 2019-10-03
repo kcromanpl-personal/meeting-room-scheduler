@@ -1,2 +1,5 @@
-= form_for @schedule do |f|
-  =render(:partial => 'bookform', :locals => {:form => f})
+= render 'layouts/flasherror'
+.container 
+  h3 Edit Schedule
+  = form_for @schedule do |f|
+    =render(:partial => 'bookform', :locals => {:form => f})

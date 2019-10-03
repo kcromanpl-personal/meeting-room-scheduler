@@ -14,3 +14,19 @@
  *= require_self
  */
  @import "bootstrap/scss/bootstrap";
+
+ .container .col-md-5{
+    background:rgba(200,200,102,0.2);
+   display: inline-block;
+   height: 100px;
+   text-align: center;
+   padding: 20px;
+   margin: 20px;
+ }
+ .container .col-md-5:hover{
+  background:rgba(200,200,102,0.3);
+  cursor: pointer;
+}
+ .margin-left{
+   margin-left: 40%;
+ }
