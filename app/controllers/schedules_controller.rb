@@ -23,7 +23,10 @@ class SchedulesController < ApplicationController
     #create function
 
     @schedule = @meeting_room.schedules.new(schedule_params)
-    @schedule.user_id = current_user.id 
+    # @meeting.user = current_user
+    # binding.pry
+    # @schedule.user = current_user.id
+    
     @users_list = User.pluck(:email)
 
     if @schedule.save
@@ -75,7 +78,7 @@ class SchedulesController < ApplicationController
     # end
     #set params
     def schedule_params
-      params.require(:schedule).permit(:name, :agenda, :start_date, :end_date, :start_time, :end_time, :add_users, :user_id)
+      params.require(:schedule).permit(:name, :agenda, :start_date, :end_date, :start_time, :end_time, :add_users)
     end
 
 end
