@@ -26,11 +26,18 @@ class SchedulesController < ApplicationController
       render "new"
     end
   end
+<<<<<<< HEAD
 
   #edit
   def edit
     @schedule = @meeting_room.schedules.find(params[:id])
     @users_list = User.pluck(:email)
+=======
+ #edit
+  def edit  
+    @schedule = @meeting_room.schedules.find(params[:id])  
+    @users_list = User.pluck(:email)  
+>>>>>>> 1c3bc54fc77aa978d61c0f4e48b3d70a5c515228
   end
 
   #update
