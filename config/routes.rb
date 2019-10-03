@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     resources :schedules
   end
   
+  get "all_schedules", to: "schedules#all_schedules", as: "all_schedules"
 end

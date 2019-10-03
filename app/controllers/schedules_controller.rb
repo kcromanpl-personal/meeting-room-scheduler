@@ -1,9 +1,13 @@
 class SchedulesController < ApplicationController
-  before_action :set_meeting_room
+  before_action :set_meeting_room, except: [:all_schedules]
   # before_action :set_schedule, only: [:show, :edit, :update, :destroy ]
 
   def index
     @schedules = @meeting_room.schedules.all
+  end
+
+  def all_schedules
+    @schedules = Schedule.all
   end
 
   def new
