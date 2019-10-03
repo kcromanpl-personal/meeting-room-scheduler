@@ -17,8 +17,11 @@ class SchedulesController < ApplicationController
 
     @schedule = @meeting_room.schedules.new(schedule_params)
     @schedule.user_id = current_user.id 
+    @users_list = User.pluck(:email)
 
     if @schedule.save
+      # UserMailer.with(user: @user).welcome_email.deliver_later
+      UserMailer.send_mail(@schedule, @users_list).deliver_now
       redirect_to meeting_room_schedules_path(@meeting_room)
     else
       render 'new'
@@ -33,8 +36,10 @@ class SchedulesController < ApplicationController
 #update 
   def update
     @schedule = @meeting_room.schedules.find(params[:id])
+    @users_list = User.pluck(:email)
 
     if @schedule.update(schedule_params)
+      UserMailer.send_mail(@schedule, @users_list).deliver_now
       redirect_to meeting_room_schedules_path
     else
       render 'edit'

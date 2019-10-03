@@ -1,5 +1,6 @@
 class MeetingRoomsController < ApplicationController
   before_action :set_meeting,  only: [:show, :edit, :update, :destroy ]
+  
   def index
     @meeting_rooms = MeetingRoom.all
   end

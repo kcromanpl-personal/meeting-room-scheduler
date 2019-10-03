@@ -1,0 +1,21 @@
+/ = render "/schedules/index"
+
+h3 Meeting Schedule Details
+p
+  strong Name: 
+  = @schedule.name
+p
+  strong Agenda: 
+  = @schedule.agenda
+p
+  strong Start Date: 
+  = @schedule.start_date
+p
+  strong End Date: 
+  = @schedule.end_date
+p
+  strong Start Time: 
+  = @schedule.start_time
+p
+  strong End Time: 
+  = @schedule.end_time
