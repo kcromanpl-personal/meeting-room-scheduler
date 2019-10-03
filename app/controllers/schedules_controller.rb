@@ -27,7 +27,7 @@ class SchedulesController < ApplicationController
  #edit
   def edit  
     @schedule = @meeting_room.schedules.find(params[:id])  
-    @users_list = User.pluck(:email)
+    @users_list = User.pluck(:email)  
   end
 
 #update 
