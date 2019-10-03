@@ -20,5 +20,6 @@ table class = "table table-dark table-hover"
 
       / Only for creating users
       -if admin?
+          td = link_to 'Show', meeting_room_schedule_path(meeting_room_id:@meeting_room.id, id: schedule.id), class: 'btn btn-info'
           td = link_to 'Edit', edit_meeting_room_schedule_path(meeting_room_id:@meeting_room.id, id: schedule.id), class: 'btn btn-info'
           td = link_to 'Delete', meeting_room_schedule_path(@meeting_room, schedule), method: :delete, data: {confirm: 'Are You sure ?'},class: 'btn btn-info'

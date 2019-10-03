@@ -37,10 +37,10 @@
   = form.label :add_users
   / select helper takes two options hashes, one for select, and the second for html options
   / (:TYPE, Categories.collect {|p| [ p.name, p.id ] },
-  / = form.select :add_users, options_for_select(@users_list.collect),{ :multiple => true, :size => 4 }, class:'form-control col-3'
-  - @users_list.each do |email|    
-    = form.check_box :add_users, { multiple: true }, email
-    label = email
+  = form.select :add_users, options_for_select(@users_list),{ :multiple => true}, class:'form-control col-3'
+  / - @users_list.each do |email|    
+  /   = form.check_box :add_users, { multiple: true }, email
+  /   label = email
 
 
 .form_item

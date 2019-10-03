@@ -11,6 +11,10 @@ class SchedulesController < ApplicationController
     @users_list = User.pluck(:email)
   end
 
+  def show
+    @schedule = @meeting_room.schedules.find(params[:id])
+  end
+
   def create
     #create function
 
@@ -21,7 +25,7 @@ class SchedulesController < ApplicationController
     if @schedule.save
       # UserMailer.with(user: @user).welcome_email.deliver_later
       UserMailer.send_mail(@schedule, @users_list).deliver_now
-      redirect_to meeting_room_schedules_path(@meeting_room)
+      redirect_to meeting_room_schedule_path(@meeting_room, @schedule)
     else
       render "new"
     end
