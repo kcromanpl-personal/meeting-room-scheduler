@@ -10,6 +10,7 @@ class SchedulesController < ApplicationController
   end
 
   def create
+    #create function
     @schedule = Schedule.new(schedule_params)
     @schedule.user_id = current_user.id 
 
@@ -19,7 +20,7 @@ class SchedulesController < ApplicationController
       render 'new'
     end
   end
-
+ #edit
   def edit
     @users_list = User.pluck(:email)
   end
