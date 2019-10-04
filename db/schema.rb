@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 2019_10_03_160254) do
     t.string "name"
     t.string "agenda"
     t.datetime "start_date"
-    t.datetime "end_date"
     t.datetime "start_time"
     t.datetime "end_time"
     t.string "add_users"

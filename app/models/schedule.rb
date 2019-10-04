@@ -4,4 +4,6 @@ class Schedule < ApplicationRecord
      #m:n with user
       # User Associations: 
      has_and_belongs_to_many :users
+     validates :name, :agenda,  presence: true     
+
 end

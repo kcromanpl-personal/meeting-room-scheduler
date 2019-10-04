@@ -78,7 +78,7 @@ class SchedulesController < ApplicationController
     # end
     #set params
     def schedule_params
-      params.require(:schedule).permit(:name, :agenda, :start_date, :end_date, :start_time, :end_time, :add_users)
+      params.require(:schedule).permit(:name, :agenda, :start_date, :start_time, :end_time, :add_users)
     end
 
 end
