@@ -4,7 +4,7 @@ class CreateSchedules < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :agenda
       t.datetime :start_date
-      t.datetime :end_date
+      # t.datetime :end_date
       t.datetime :start_time
       t.datetime :end_time
       t.string :add_users

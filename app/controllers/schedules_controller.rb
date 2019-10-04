@@ -25,16 +25,23 @@ class SchedulesController < ApplicationController
     #create function
     
     @schedule = @meeting_room.schedules.new(schedule_params)
+<<<<<<< HEAD
     @schedule.user_id = current_user.id
     commontator_thread_show(@schedule)
+=======
+    # @meeting.user = current_user
+    # binding.pry
+    # @schedule.user = current_user.id
+    
+>>>>>>> 1a26f3dda2f9acd6b56f27bb97cd5f0e1b824160
     @users_list = User.pluck(:email)
 
     if @schedule.save
       # UserMailer.with(user: @user).welcome_email.deliver_later
       UserMailer.send_mail(@schedule, @users_list).deliver_now
-      redirect_to meeting_room_schedule_path(@meeting_room, @schedule)
+      redirect_to meeting_room_schedules_path
     else
-      render "new"
+      render 'new'
     end
   end
  #edit
@@ -45,7 +52,7 @@ class SchedulesController < ApplicationController
     @users_list = User.pluck(:email)  
   end
 
-  #update
+#update 
   def update
     @schedule = @meeting_room.schedules.find(params[:id])
     @users_list = User.pluck(:email)
@@ -54,7 +61,7 @@ class SchedulesController < ApplicationController
       UserMailer.send_mail(@schedule, @users_list).deliver_now
       redirect_to meeting_room_schedules_path
     else
-      render "edit"
+      render 'edit'
     end
   end
 
@@ -64,25 +71,24 @@ class SchedulesController < ApplicationController
     if @schedule.destroy
       redirect_to meeting_room_schedules_path
     else
-      render "new"
+      render 'new'
     end
   end
   
 
 
   private
-
   #set Meeting Room
-  def set_meeting_room
-    @meeting_room = MeetingRoom.find(params[:meeting_room_id])
-  end
-
+    def set_meeting_room
+      @meeting_room = MeetingRoom.find(params[:meeting_room_id])
+    end
   #set schedule
-  # def set_schedule
-  #   @schedule = Schedule.find(params[:id])
-  # end
-  #set params
-  def schedule_params
-    params.require(:schedule).permit(:name, :agenda, :start_date, :end_date, :start_time, :end_time, :add_users, :user_id)
-  end
+    # def set_schedule
+    #   @schedule = Schedule.find(params[:id])
+    # end
+    #set params
+    def schedule_params
+      params.require(:schedule).permit(:name, :agenda, :start_date, :start_time, :end_time, :add_users)
+    end
+
 end
