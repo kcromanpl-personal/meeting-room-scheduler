@@ -5,11 +5,13 @@
 
 .form_item
   = form.label :agenda
+  / = commontator_thread(@schedule)
   br/
   = form.text_area :agenda,class:'form-control col-auto'
 
 .form_item
   = form.label :start_date
+  = render 'calendar'
   br/
   / form selection for start date
   = form.select :start_date,['2019-09-10','2019-09-11'],{},class:'form-control col-2'

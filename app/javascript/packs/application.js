@@ -20,3 +20,9 @@ import 'bootstrap'
 //= require jquery
 //= require popper.js/dist/umd/popper
 //= require bootstrap/dist/js/bootstrap
+// If jquery-ujs was installed through jquery-rails
+//= require jquery_ujs
+// If jquery-ujs was installed through webpacker and yarn/npm/bower
+//= require jquery-ujs
+//= require tempusdominus-bootstrap-4.js
+//= require commontator/application

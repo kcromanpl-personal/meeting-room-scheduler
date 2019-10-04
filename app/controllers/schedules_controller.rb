@@ -12,18 +12,21 @@ class SchedulesController < ApplicationController
 
   def new
     @schedule = @meeting_room.schedules.new
+    commontator_thread_show(@schedule)
     @users_list = User.pluck(:email)
   end
 
   def show
     @schedule = @meeting_room.schedules.find(params[:id])
+    commontator_thread_show(@schedule)
   end
 
   def create
     #create function
-
+    
     @schedule = @meeting_room.schedules.new(schedule_params)
     @schedule.user_id = current_user.id
+    commontator_thread_show(@schedule)
     @users_list = User.pluck(:email)
 
     if @schedule.save
@@ -36,7 +39,9 @@ class SchedulesController < ApplicationController
   end
  #edit
   def edit  
+    
     @schedule = @meeting_room.schedules.find(params[:id])  
+    commontator_thread_show(@schedule)
     @users_list = User.pluck(:email)  
   end
 
@@ -62,6 +67,7 @@ class SchedulesController < ApplicationController
       render "new"
     end
   end
+  
 
 
   private
