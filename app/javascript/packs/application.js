@@ -26,3 +26,4 @@ import 'bootstrap'
 //= require jquery-ujs
 //= require tempusdominus-bootstrap-4.js
 //= require commontator/application
+
