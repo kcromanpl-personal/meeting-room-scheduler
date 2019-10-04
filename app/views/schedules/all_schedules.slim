@@ -4,7 +4,6 @@ table class = "table table-dark table-hover"
     th Agenda
     th Meeting Room
     th Start Date
-    th End Date
     th Start Time
     th End Time
     th Users
@@ -15,7 +14,6 @@ table class = "table table-dark table-hover"
       td = schedule.agenda
       td = schedule.meeting_room.name
       td = readable_date(schedule.start_date)
-      td = readable_date(schedule.end_date)
       td = readable_time(schedule.start_time)
       td = readable_time(schedule.end_time)
       td = schedule.add_users
