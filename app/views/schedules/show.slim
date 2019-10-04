@@ -1,5 +1,4 @@
 .container
-
 	h3 Meeting Schedule Details
 	p
 	strong Name: 
@@ -22,5 +21,8 @@
 	p
 	strong Attendies
 	= @schedule.add_users
+	p
+	strong Minutes: 
+	= commontator_thread(@schedule)
 
 = link_to 'Meeting Room', meeting_rooms_path, class: 'btn btn-info col-8 margin-left'  

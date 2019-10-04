@@ -53,9 +53,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-
-#Gem for calendar
-  gem "simple_calendar", "~> 2.0"
+  
+  gem 'jquery-rails'
+  gem 'sassc-rails'
+# Gem for Comments
+  gem 'commontator'
 # Debugging - pry rails
   gem 'pry-rails', :group => :development
 # Gem file Dotenv-rails for environment variables

@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   end
   
   get "all_schedules", to: "schedules#all_schedules", as: "all_schedules"
+  mount Commontator::Engine => '/commontator'
 end
